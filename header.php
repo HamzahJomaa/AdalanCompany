@@ -1,9 +1,27 @@
 <?php
 session_start();
 if (isset($_SESSION["userID"])) {
+    $userID = $_SESSION["userID"];
 }
 ?>
 
+<head>
+    <meta charset="utf-8">
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
 <!-- Main Header-->
 <header class="main-header">
 
@@ -30,9 +48,10 @@ if (isset($_SESSION["userID"])) {
 
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="dropdown"><a href="index.php">Home</a>
-                                </li>
+                                <li><a href="index.php">Home</a></li>
                                 <li><a href="about.php">About Us</a></li>
+                                <li><a href="order.php">Order Now</a></li>
+
                                 <li class="dropdown"><a href="#">Pages</a>
                                     <ul>
                                         <li><a href="team.php">Our Team</a></li>
@@ -103,9 +122,10 @@ if (isset($_SESSION["userID"])) {
 
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="index.php">Home</a>
-                            </li>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="about.php">About Us</a></li>
+                            <li><a href="order.php">Order Now</a></li>
+
                             <li class="dropdown"><a href="#">Pages</a>
                                 <ul>
                                     <li><a href="team.php">Our Team</a></li>

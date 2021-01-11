@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
     if ($data["pass"] === $password) {
         $_SESSION["userID"] = $data["id"];
-        header('Location: home_page.php');
+        header('Location: index.php');
     } else {
         header('Location: index.php');
     }
