@@ -72,9 +72,9 @@ if (isset($_SESSION["userID"])) {
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Contact us</a></li>
-                                <li <?php echo isset($_SESSION["userID"]) ? "class='dropdown'" : "";  ?>><a href="<?php echo isset($_SESSION["userID"]) ? "index.php" : "sign-in.php";  ?>"><?php echo isset($_SESSION["userID"]) ? "Profile" : "Sign In";  ?></a>
+                                <li <?php echo isset($userID) ? "class='dropdown'" : "";  ?>><a href="<?php echo isset($userID) ? "index.php" : "sign-in.php";  ?>"><?php echo isset($userID) ? "Profile" : "Sign In";  ?></a>
 
-                                    <?php echo isset($_SESSION["userID"]) ? "<ul> <li><a href='shop.php'>Profile</a></li>
+                                    <?php echo isset($userID) ? "<ul> <li><a href='shop.php'>Profile</a></li>
                                         <li><a href='signout.php'>Sign Out</a></li></ul>" : "";  ?>
 
 

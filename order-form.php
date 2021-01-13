@@ -5,22 +5,20 @@
 
     include("connect.php");
     $get_med = "SELECT * FROM medicines";
+    $get_cust = "SELECT * FROM customers WHERE id = " . $userID . "";
+    $query_cust = $conn->query($get_cust);
+    while ($row_cat = $query_cust->fetch_assoc()) {
+        $cust = $row_cat;
+    }
 
     ?>
     <div class="container" style="margin-top: 5%;">
         <div class="title">
-            <h2>Product Order Form</h2>
+            <h2>Product Order Form - <b><?php echo $cust["first_name"] . " " . $cust["last_name"]; ?></b> </h2>
         </div>
         <div class="d-flex">
             <form action="" method="">
-                <label>
-                    <span class="fname">First Name <span class="required">*</span></span>
-                    <input type="text" name="fname">
-                </label>
-                <label>
-                    <span class="lname">Last Name <span class="required">*</span></span>
-                    <input type="text" name="lname">
-                </label>
+
                 <label>
                     <span>Company Name (Optional)</span>
                     <input type="text" name="cn">
@@ -44,14 +42,6 @@
                 <label>
                     <span>Postcode / ZIP <span class="required">*</span></span>
                     <input type="text" name="city">
-                </label>
-                <label>
-                    <span>Phone <span class="required">*</span></span>
-                    <input type="tel" name="city">
-                </label>
-                <label>
-                    <span>Email Address <span class="required">*</span></span>
-                    <input type="email" name="city">
                 </label>
 
                 <hr>
@@ -121,7 +111,20 @@
                     array1.push(arrayItem);
                 });
                 console.log(array1)
-                location.href = 'order_submit?data=' + JSON.stringify(array1);
+                $.ajax({
+                    type: "POST", //type of method
+                    url: "order_submit.php", //your page
+                    data: JSON.stringify({
+                        UserId: <?php echo $userID ?>,
+                        Medicines: array1
+                    }),
+                    contentType: "application/json",
+                    success: function(res) {
+                        console.log(res)
+                    }
+                });
+
+
             })
         })
     </script>

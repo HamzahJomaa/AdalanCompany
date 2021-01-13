@@ -2,8 +2,9 @@
 include("header.php");
 
 if (!isset($userID)) {
-    echo "<script type='text/javascript'>location.href = 'sign-in   .php';</script>";
+    echo "<script type='text/javascript'>location.href = 'sign-in.php';</script>";
 }
+echo $userID;
 ?>
 
 <head>
@@ -11,7 +12,6 @@ if (!isset($userID)) {
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Adalan Company - Order</title>
-
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
