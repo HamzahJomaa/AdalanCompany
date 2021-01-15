@@ -1,8 +1,7 @@
 <?php
-$db = "adalancompany";
-$conn = new mysqli("localhost", "eps_user", "3ps_us3r", $db);
+$db = "adalanco_adalancompany";
+$conn = new mysqli("173.212.232.45", "adalanco_admin_user", "@d@l@n2021", $db);
 
-mysqli_query($conn, "SET NAMES 'utf8' ");
 
 // Check connection
 if ($conn->connect_error) {
